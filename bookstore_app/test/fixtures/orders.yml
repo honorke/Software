@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  order_no: MyString
+  payment_time: 2019-11-18 21:06:32
+
+two:
+  user_id: 1
+  order_no: MyString
+  payment_time: 2019-11-18 21:06:32
