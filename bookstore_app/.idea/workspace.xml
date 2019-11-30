@@ -32,6 +32,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\KeDong\Desktop\SoftWare\bookstore_app\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1TmbAxYExYyB56Guj30n53V8o1t" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -143,7 +150,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574068077559</updated>
-      <workItem from="1574068078786" duration="15035000" />
+      <workItem from="1574068078786" duration="25814000" />
+      <workItem from="1574648825589" duration="5489000" />
+      <workItem from="1575094728918" duration="682000" />
     </task>
     <servers />
   </component>
@@ -155,7 +164,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

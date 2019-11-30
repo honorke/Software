@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration[5.1]
       t.integer :user_id
       t.string :order_no
       t.datetime :payment_time
+      t.integer :book_id
 
       t.timestamps
     end
