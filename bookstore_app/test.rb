@@ -76,6 +76,14 @@ def createC2()
   arr = arr.uniq
   puts(arr)
 
+
+  arr2 = Array.new(5)
+  puts("arr2")
+  puts arr2[0] == nil
+  puts arr2[0] == 0
+
+
+
 end
 
-createC1()
+createC2()

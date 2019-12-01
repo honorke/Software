@@ -46,7 +46,7 @@ class BooksController < ApplicationController
     # end
     # temp = temp.flatten
 
-    result = Array.new(4)
+    result = Array.new
     flag = true
     for i in 0..resp.length - 1
       if(resp[i] == temp[0] && flag == true)
@@ -90,20 +90,37 @@ class BooksController < ApplicationController
 
     for i in 0..result.length - 1
       puts(result[i])
+      puts("hello, world")
     end
 
-    @recommend_book1 = Book.find(result[0])
-    puts(@recommend_book1.title)
+    if result[0] != nil && result[0] != 0
+      @recommend_book1 = Book.find(result[0])
+      puts(@recommend_book1.title)
+    else
+      @recommend_book1 = Book.find(2)
+    end
 
-    @recommend_book2 = Book.find(result[1])
-    puts(@recommend_book2.title)
 
-    @recommend_book3 = Book.find(result[2])
-    puts(@recommend_book3.title)
+    if result[1] != nil && result[1] != 0
+      @recommend_book2 = Book.find(result[1])
+      puts(@recommend_book2.title)
+    else
+      @recommend_book2 = Book.find(3)
+    end
 
-    @recommend_book4 = Book.find(result[3])
-    puts(@recommend_book4.title)
+    if result[2] != nil && result[2] != 0
+      @recommend_book3 = Book.find(result[2])
+      puts(@recommend_book3.title)
+    else
+      @recommend_book3 = Book.find(5)
+    end
 
+    if result[3] != nil && result[3] != 0
+      @recommend_book4 = Book.find(result[3])
+      puts(@recommend_book4.title)
+    else
+      @recommend_book4 = Book.find(7)
+    end
 
 
 

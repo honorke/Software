@@ -55,14 +55,7 @@ Book.create!(
     path: "http://img3m9.ddimg.cn/23/29/25122659-1_b_3.jpg",
     picLocation: "http://img3m9.ddimg.cn/23/29/25122659-1_b_3.jpg")
 
-Book.create!(
-    title: " 计算机视觉——一种现代方法（第二版）",
-    price: 79.60,
-    author: "赫恩",
-    publish: "电子工业出版社",
-    time: "2017-07-01",
-    path: "http://img3m9.ddimg.cn/23/29/25122659-1_b_3.jpg",
-    picLocation: "http://img3m9.ddimg.cn/23/29/25122659-1_b_3.jpg")
+
 
 book_list = {
     1 => {
