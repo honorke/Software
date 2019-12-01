@@ -10,6 +10,104 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @orders = Order.where(book_id: @book.id)
+    resp = Array.new(100,0)
+    for order in @orders
+      print("order_no")
+      puts order.order_no
+      @books = Order.where(order_no: order.order_no)
+      print("book_id")
+      for book in @books
+        if book.book_id != @book.id
+          puts(book.book_id)
+          resp[book.book_id] += 1
+        end
+      end
+    end
+
+    # dataSet = [
+    #     [1,3,4],
+    #     [2,3,5],
+    #     [1,2,3,5],
+    #     [2,5]
+    # ]
+    for i in 0..resp.length-1
+      if(resp[i]!=0)
+        print(i)
+        print("   ")
+        puts(resp[i])
+      end
+    end
+
+    temp = resp.sort{ |x, y| y <=> x}
+    # puts("temp")
+    # for i in 0..5
+    #   puts(temp[i])
+    # end
+    # temp = temp.flatten
+
+    result = Array.new(4)
+    flag = true
+    for i in 0..resp.length - 1
+      if(resp[i] == temp[0] && flag == true)
+        result[0] = i
+        flag = false
+        # puts("000")
+        # puts(i)
+      end
+    end
+    flag = true
+    for i in 0..resp.length - 1
+      if(resp[i] == temp[1] && flag == true && i != result[0])
+        # puts("001")
+        # puts(i)
+        # puts(result[0])
+        result[1] = i
+        flag = false
+      end
+    end
+    flag = true
+    for i in 0..resp.length - 1
+      if(resp[i] == temp[2] && flag == true && i != result[0] && i != result[1])
+        result[2] = i
+        # puts("002")
+        # puts(i)
+        flag = false
+      end
+    end
+    flag = true
+    for i in 0..resp.length - 1
+      if(resp[i] == temp[3] && flag == true && i != result[0] && i != result[1] && i != result[2])
+        result[3] = i
+        flag = false
+        # puts("003")
+        # puts(i)
+      end
+    end
+    # puts("result")
+    # puts("result size = ")
+    # puts(result.length)
+
+    for i in 0..result.length - 1
+      puts(result[i])
+    end
+
+    @recommend_book1 = Book.find(result[0])
+    puts(@recommend_book1.title)
+
+    @recommend_book2 = Book.find(result[1])
+    puts(@recommend_book2.title)
+
+    @recommend_book3 = Book.find(result[2])
+    puts(@recommend_book3.title)
+
+    @recommend_book4 = Book.find(result[3])
+    puts(@recommend_book4.title)
+
+
+
+
+
   end
 
   # GET /books/new

@@ -25,15 +25,32 @@
   <%= @book.time %>
 </p>
 
-<p>
-  <strong>Path:</strong>
-  <%= @book.path %>
-</p>
+<!--<p>-->
+<!--  <strong>Path:</strong>-->
+  <%#= @book.path %>
+<!--</p>-->
 
 <p>
   <strong>Piclocation:</strong>
-  <%= @book.picLocation %>
+  <%#=   @book.picLocation %>
+  <%= image_tag @book.picLocation %>
 </p>
+
+
+
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
+
+
+<p>
+  <%= image_tag @recommend_book1.picLocation %>
+
+  <%= image_tag @recommend_book2.picLocation %>
+</p>
+
+<p>
+  <%= image_tag @recommend_book3.picLocation %>
+
+  <%= image_tag @recommend_book4.picLocation %>
+</p>
