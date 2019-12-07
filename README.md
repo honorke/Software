@@ -5,4 +5,4 @@ bundle update
 bundle install  
 rails db:migrate  
 rails db:seed  
-rails s# Software  
+rails s
