@@ -40,6 +40,10 @@ class BooksController < ApplicationController
     end
 
     temp = resp.sort{ |x, y| y <=> x}
+    # for i in 0..temp.length-1
+    #   puts temp[i]
+    #
+    # end
     # puts("temp")
     # for i in 0..5
     #   puts(temp[i])
@@ -97,7 +101,7 @@ class BooksController < ApplicationController
       @recommend_book1 = Book.find(result[0])
       puts(@recommend_book1.title)
     else
-      @recommend_book1 = Book.find(2)
+      @recommend_book1 = Book.find(4)
     end
 
 

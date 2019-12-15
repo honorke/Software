@@ -60,7 +60,6 @@
     <orderEntry type="library" scope="PROVIDED" name="mini_portile2 (v2.4.0, ruby-2.4.6-p354) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.13.0, ruby-2.4.6-p354) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.14.1, ruby-2.4.6-p354) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mysql2 (v0.3.21, ruby-2.4.6-p354) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.5.2, ruby-2.4.6-p354) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.10.5, ruby-2.4.6-p354) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v3.9.1, ruby-2.4.6-p354) [gem]" level="application" />
