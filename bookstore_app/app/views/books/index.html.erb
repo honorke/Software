@@ -2,6 +2,7 @@
 
 <h1>Books</h1>
 
+
 <table>
   <thead>
     <tr>
@@ -10,8 +11,8 @@
       <th>Author</th>
       <th>Publish</th>
       <th>Time</th>
-      <th>Path</th>
-      <th>Piclocation</th>
+<!--      <th>Path</th>-->
+<!--      <th>Piclocation</th>-->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,12 +25,12 @@
         <td><%= book.author %></td>
         <td><%= book.publish %></td>
         <td><%= book.time %></td>
-        <td><%= book.path %></td>
-        <td><%= book.picLocation %></td>
+
+
         <td><%= image_tag book.picLocation %></td>
         <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<!--        <td><%#= link_to 'Edit', edit_book_path(book) %></td>-->
+<!--        <td><%#= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
@@ -38,3 +39,4 @@
 <br>
 
 <%= link_to 'New Book', new_book_path %>
+<%= will_paginate %>
