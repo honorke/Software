@@ -12205,6 +12205,7 @@ book_list.keys.each do |index|
       [12076, ' 从Docker到Kubernetes入门与实战', 'http://img3m5.ddimg.cn/21/15/1566743925-1_b_1.jpg', '¥69.00', '杨保华', '电子工业出版社', ' /2018-07-01'],
       [12077, ' 【二手书9成新】本Docker书,（澳）特恩布尔； 李兆海,刘斌,巨震,人民邮电出版社', 'http://img3m6.ddimg.cn/17/13/1351239236-1_b_1.jpg', '¥34.00', '戴王剑', '中国电力出版社', ' /2016-03-01']
 
+
   ]
 
 
@@ -12214,7 +12215,10 @@ book_list.keys.each do |index|
     id = books1[i][0]
     _title = books1[i][1]
     _url = books1[i][2]
+
+
     _price = books1[i][3]
+    _price = _price[1, _price.length].to_f
     _author = books1[i][4]
     _publish = books1[i][5]
     _time = books1[i][6]
