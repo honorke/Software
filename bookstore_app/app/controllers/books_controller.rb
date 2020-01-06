@@ -12,7 +12,7 @@ class BooksController < ApplicationController
   # GET /books/1.json
   def show
     @orders = Order.where(book_id: @book.id)
-    resp = Array.new(100,0)
+    resp = Array.new(13000,-1)
     for order in @orders
       print("order_no")
       puts order.order_no
@@ -33,12 +33,17 @@ class BooksController < ApplicationController
     #     [2,5]
     # ]
     for i in 0..resp.length-1
-      if(resp[i]!=0)
+      if(resp[i]!=-1)
         print(i)
         print("   ")
         puts(resp[i])
       end
     end
+
+     # for i in 0..10
+     #   puts "resp[i]"
+     #   puts resp[i]
+     # end
 
     temp = resp.sort{ |x, y| y <=> x}
     # for i in 0..temp.length-1
@@ -50,11 +55,15 @@ class BooksController < ApplicationController
     #   puts(temp[i])
     # end
     # temp = temp.flatten
+    # for i in 0..10
+    #   puts "temp[i]"
+    #   puts temp[i]
+    # end
 
     result = Array.new
     flag = true
     for i in 0..resp.length - 1
-      if(resp[i] == temp[0] && flag == true)
+      if(resp[i] == temp[0] && resp[i] != -1 && flag == true)
         result[0] = i
         flag = false
         # puts("000")
@@ -63,7 +72,7 @@ class BooksController < ApplicationController
     end
     flag = true
     for i in 0..resp.length - 1
-      if(resp[i] == temp[1] && flag == true && i != result[0])
+      if(resp[i] == temp[1] && flag == true && i != result[0] && resp[i] != -1)
         # puts("001")
         # puts(i)
         # puts(result[0])
@@ -73,7 +82,7 @@ class BooksController < ApplicationController
     end
     flag = true
     for i in 0..resp.length - 1
-      if(resp[i] == temp[2] && flag == true && i != result[0] && i != result[1])
+      if(resp[i] == temp[2] && flag == true && i != result[0] && i != result[1] && resp[i] != -1)
         result[2] = i
         # puts("002")
         # puts(i)
@@ -82,7 +91,7 @@ class BooksController < ApplicationController
     end
     flag = true
     for i in 0..resp.length - 1
-      if(resp[i] == temp[3] && flag == true && i != result[0] && i != result[1] && i != result[2])
+      if(resp[i] == temp[3] && flag == true && i != result[0] && i != result[1] && i != result[2] && resp[i] != -1)
         result[3] = i
         flag = false
         # puts("003")
@@ -98,33 +107,33 @@ class BooksController < ApplicationController
       puts("hello, world")
     end
 
-    if result[0] != nil && result[0] != 0
+    if result[0] != nil && result[0] != -1
       @recommend_book1 = Book.find(result[0])
       puts(@recommend_book1.title)
     else
-      @recommend_book1 = Book.find(4)
+      @recommend_book1 = Book.where("title like ?", "%docker%").first
     end
 
 
-    if result[1] != nil && result[1] != 0
+    if result[1] != nil && result[1] != -1
       @recommend_book2 = Book.find(result[1])
       puts(@recommend_book2.title)
     else
-      @recommend_book2 = Book.find(3)
+      @recommend_book2 = Book.where("title like ?", "%Python%").first
     end
 
-    if result[2] != nil && result[2] != 0
+    if result[2] != nil && result[2] != -1
       @recommend_book3 = Book.find(result[2])
       puts(@recommend_book3.title)
     else
-      @recommend_book3 = Book.find(5)
+      @recommend_book3 = Book.where("title like ?", "%Nginx%").first
     end
 
-    if result[3] != nil && result[3] != 0
+    if result[3] != nil && result[3] != -1
       @recommend_book4 = Book.find(result[3])
       puts(@recommend_book4.title)
     else
-      @recommend_book4 = Book.find(7)
+      @recommend_book4 = Book.where("title like ?", "%Scrum%").first
     end
 
 
