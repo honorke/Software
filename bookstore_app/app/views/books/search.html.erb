@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Search</title>
+</head>
+<body>
+
+<table class="table table-bordered table-hover">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Author</th>
+    <th>Publish</th>
+    <th>Time</th>
+    <!--      <th>Path</th>-->
+    <!--      <th>Piclocation</th>-->
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @search_books.each do |search_book| %>
+    <tr>
+      <td width="30%"><%= search_book.title %></td>
+      <td><%= search_book.price %></td>
+      <td><%= search_book.author %></td>
+      <td><%= search_book.publish %></td>
+      <td><%= search_book.time %></td>
+
+
+      <td><%= image_tag search_book.picLocation %></td>
+      <td><%= link_to 'Show', search_book %></td>
+      <!--        <td><%#= link_to 'Edit', edit_book_path(book) %></td>-->
+      <!--        <td><%#= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Book', new_book_path %>
+<%= will_paginate @search_books  %>
+%>
+
+
+
+</body>
+</html>

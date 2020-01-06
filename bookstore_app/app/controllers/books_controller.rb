@@ -8,6 +8,32 @@ class BooksController < ApplicationController
 
   end
 
+  # def search_book
+  #   if params[:q].nil?
+  #     @result = []
+  #   else
+  #     @result = Book.search_book(params[:q]).painate(page:1, per_page: 10)
+  #   end
+  # end
+  def search
+    # if params[:title].nil?
+    #    index
+    # else
+      # @user = User.paginate(page: params[:page], per_page: 9).where(:admin => 'false')
+
+      @search_books = Book.paginate(page: params[:page], per_page: 10).where("title like ?" , "%#{params[:title]}%")
+
+      # @search_books = Book.paginate(page: params[:page] ,
+      #                                :per_page => 10 ,
+      #                               :conditions => ['title like ?' "%#{params[:title]}%"]
+
+      # )
+      for b in @search_books
+        puts b.title
+      end
+    end
+
+
   # GET /books/1
   # GET /books/1.json
   def show
