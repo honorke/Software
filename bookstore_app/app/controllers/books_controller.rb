@@ -1,6 +1,9 @@
+require 'jieba_rb'
+require 'will_paginate/array'
+
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-
+  $seg = JiebaRb::Segment.new
   # GET /books
   # GET /books.json
   def index
@@ -20,17 +23,28 @@ class BooksController < ApplicationController
     #    index
     # else
       # @user = User.paginate(page: params[:page], per_page: 9).where(:admin => 'false')
+      words = $seg.cut(params[:title])
+      puts words
+      # @search_books = Book.paginate(page: params[:page], per_page: 10).where(:title  '%#{words}%')
+      # @search_books = Book.paginate(page: params[:page]).where("title like ?" , "%#{params[:title]}%")
+      @search_books = Book.where("title like ? ", "%#{params[:title]}%").limit(10).offset(0)
+      for word in words
+        @search_books += Book.where("title like ? ", "%#{word}%").limit(10).offset(0)
+      end
 
-      @search_books = Book.paginate(page: params[:page], per_page: 10).where("title like ?" , "%#{params[:title]}%")
+
+
+       #@search_books = Book.paginate(page: params[:page], per_page: 10).where("title like ?" , "%#{params[:title]}%")
+      # @search_books = Book.search(params[:title]).paginate(page:1,per_page:10)
 
       # @search_books = Book.paginate(page: params[:page] ,
       #                                :per_page => 10 ,
       #                               :conditions => ['title like ?' "%#{params[:title]}%"]
 
       # )
-      for b in @search_books
-        puts b.title
-      end
+      # for b in @search_books
+      #   puts b.title
+      # end
     end
 
 

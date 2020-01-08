@@ -392,7 +392,7 @@
       <workItem from="1576406198568" duration="5013000" />
       <workItem from="1577511485683" duration="63928000" />
       <workItem from="1578311799864" duration="18952000" />
-      <workItem from="1578387611439" duration="19563000" />
+      <workItem from="1578387611439" duration="29449000" />
     </task>
     <servers />
   </component>
@@ -413,7 +413,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/bookstore_app@test.rcov" NAME="test Coverage Results" MODIFIED="1578403748313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="bookstore_app" />
+    <SUITE FILE_PATH="coverage/bookstore_app@test.rcov" NAME="test Coverage Results" MODIFIED="1578468252145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="bookstore_app" />
     <SUITE FILE_PATH="coverage/bookstore_app@my_name.rcov" NAME="my_name Coverage Results" MODIFIED="1577619495195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="bookstore_app" />
   </component>
 </project>

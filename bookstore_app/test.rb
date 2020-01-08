@@ -148,6 +148,7 @@ end
 #
 # end
 #
+
 def testUUId()
   require 'uuid'
   uuid = UUID.new
@@ -157,4 +158,15 @@ def testUUId()
     puts Time.now
   end
 end
-testUUId
+# require 'rseg'
+
+def testNlp()
+
+  require 'jieba_rb'
+  seg = JiebaRb::Segment.new  # equivalent to "JiebaRb::Segment.new mode: :mix"
+  words = seg.cut "令狐冲是云计算行业的专家"
+  puts words
+
+
+end
+testNlp()
