@@ -147,3 +147,14 @@ end
 #   analyzer = RMMSeg::Ferret::Analyzer.new do
 #
 # end
+#
+def testUUId()
+  require 'uuid'
+  uuid = UUID.new
+  for i in 0..10
+
+    puts uuid.generate
+    puts Time.now
+  end
+end
+testUUId

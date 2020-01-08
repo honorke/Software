@@ -1,10 +1,14 @@
+require 'uuid'
+
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  $uuid = UUID.new
 
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    # @orders = Order.all
+    @orders = Order.where(user_id:params[:user_id])
   end
 
   # GET /orders/1
@@ -24,18 +28,40 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+    # @order = Order.new(order_params)
+    # for id in params[:id]
+    #   @orders = Order.new()
+    # end
+    no = $uuid.generate
+    time = Time.now
 
-    respond_to do |format|
+    for id in params[:id]
+      puts id
+      puts time
+      puts  no
+      puts params[:user_id]
+      @order = Order.new(user_id:params[:user_id], payment_time:time ,order_no:no, book_id:id)
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
+        puts "success"
       else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+        puts "fail"
       end
     end
-  end
+    # redirect_to (orders_path, user_id = params[:user_id])
+    redirect_to orders_path(user_id:params[:user_id])
+
+
+
+  #   respond_to do |format|
+  #     if @order.save
+  #       format.html { redirect_to @order, notice: 'Order was successfully created.' }
+  #       format.json { render :show, status: :created, location: @order }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @order.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+   end
 
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json

@@ -2,30 +2,57 @@
 
 <h1>Shopping Carts</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>User</th>
       <th>Product</th>
       <th>Amount</th>
+      <th>Title</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
+
+
+
+
+  <%= form_tag(controller:'orders', action: 'create', method: 'post')  %>
+
+
   <tbody>
-    <% @shopping_carts.each do |shopping_cart| %>
+    <% @shopping_carts.each do |shopping_cart|   %>
       <tr>
         <td><%= shopping_cart.user_id %></td>
         <td><%= shopping_cart.product_id %></td>
         <td><%= shopping_cart.amount %></td>
+        <td><%= shopping_cart.title %></td>
+        <td><%= image_tag shopping_cart.picLocation %></td>
+
         <td><%= link_to 'Show', shopping_cart %></td>
         <td><%= link_to 'Edit', edit_shopping_cart_path(shopping_cart) %></td>
         <td><%= link_to 'Destroy', shopping_cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><input type = 'checkbox' name="id[]" value= <%= shopping_cart.product_id %> /></td>
+
+
       </tr>
+
     <% end %>
   </tbody>
+    <input type="hidden" name="user_id" value=<%= @shopping_carts[0].user_id %> />
+<!--    <input type="submit"/>-->
+    <button type="submit" class="btn btn-info btn-info">确定购买</button>
+  <%# end %>
+
+
+  </form>
+
+<!--    <input type="submit"/>-->
+<!--  </form>-->
 </table>
 
 <br>
 
-<%= link_to 'New Shopping Cart', new_shopping_cart_path %>
+
+<%#= link_to 'New Shopping Cart', new_shopping_cart_path %>
+<!--<button class="btn-default btn-info" onclick="send_data()">确定购买</button>-->

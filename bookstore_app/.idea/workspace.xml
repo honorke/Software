@@ -236,13 +236,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/assets/stylesheets" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\KeDong\Desktop\SoftWare\bookstore_app\app\assets\stylesheets" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\KeDong\Desktop\SoftWare\bookstore_app\app\assets\stylesheets" />
       <recent name="C:\Users\KeDong\Desktop\SoftWare\bookstore_app\app\views\books" />
       <recent name="C:\Users\KeDong\Desktop\SoftWare\bookstore_app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\KeDong\Desktop\SoftWare\bookstore_app\app\assets\stylesheets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -391,7 +391,8 @@
       <workItem from="1576043771718" duration="426000" />
       <workItem from="1576406198568" duration="5013000" />
       <workItem from="1577511485683" duration="63928000" />
-      <workItem from="1578311799864" duration="4103000" />
+      <workItem from="1578311799864" duration="18952000" />
+      <workItem from="1578387611439" duration="19563000" />
     </task>
     <servers />
   </component>
@@ -412,7 +413,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/bookstore_app@test.rcov" NAME="test Coverage Results" MODIFIED="1578286142355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="bookstore_app" />
+    <SUITE FILE_PATH="coverage/bookstore_app@test.rcov" NAME="test Coverage Results" MODIFIED="1578403748313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="bookstore_app" />
     <SUITE FILE_PATH="coverage/bookstore_app@my_name.rcov" NAME="my_name Coverage Results" MODIFIED="1577619495195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="bookstore_app" />
   </component>
 </project>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input  type="text" width="10px"  height="1000">
+
+<select name="sel" onchange="_t()">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="aa">Aa</option>
+    <option value="bb">B</option>
+</select>
+</body>
+
+<script>
+    function  _sel(e)
+    {
+        window.alert("值：" + e.value + "\n" +
+            "显示文本" + e.options[e.selectedIndex].text)
+
+
+    }
+    function  _t()
+    {
+        alert("hello, world")
+    }
+</script>
+</html>

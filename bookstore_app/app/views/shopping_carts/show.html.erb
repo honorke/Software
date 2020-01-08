@@ -15,5 +15,11 @@
   <%= @shopping_cart.amount %>
 </p>
 
-<%= link_to 'Edit', edit_shopping_cart_path(@shopping_cart) %> |
-<%= link_to 'Back', shopping_carts_path %>
+<p>
+  <strong>BookName</strong>
+  <%= @book.title %>
+</p>
+<%= image_tag @book.picLocation %>
+
+<%= link_to '修改图书数量', edit_shopping_cart_path(@shopping_cart) %> |
+<%= link_to '返回购物车', shopping_carts_path(user_id:@shopping_cart.user_id) %>

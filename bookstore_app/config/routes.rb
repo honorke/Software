@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :comments
   resources :orders
-  resources :shopping_carts
+  resources :shopping_carts do
+    collection do
+      post :cor
+    end
+  end
   resources :books do
     collection do
       get :search

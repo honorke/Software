@@ -2,7 +2,7 @@
 
 <h1>Orders</h1>
 
-<table>
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
       <th>User</th>
@@ -20,14 +20,16 @@
         <td><%= order.order_no %></td>
         <td><%= order.payment_time %></td>
         <td><%= order.book_id %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+<!--        <td><%#= link_to 'Show', order %></td>-->
+<!--        <td><%#= link_to 'Edit', edit_order_path(order) %></td>-->
 <!--        <td><%#= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
+
+
 </table>
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%#= link_to 'New Order', new_order_path %>
